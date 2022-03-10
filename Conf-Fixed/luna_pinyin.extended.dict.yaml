@@ -1,0 +1,28 @@
+# Rime dictionary
+# encoding: utf-8
+#
+#  BetterRime词库增强包－实用版の准正式版 by @imy0823
+#
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 于重新部署后生效
+#
+
+---
+name: luna_pinyin.extended
+version: "2020.11.29"
+sort: by_weight
+vocabulary: essay-zh-hans
+#下面的是本词库包含的所有词库，请根据需要开启/禁用，词条前添删#号即可开启/关闭词库。
+import_tables:
+  - luna_pinyin
+  - luna_pinyin.beautifulrime
+  - luna_pinyin.cn_en
+  - luna_pinyin.mw2fctix.20220218
+  - luna_pinyin.chaizi
+  - luna_pinyin.user.20220310
+...

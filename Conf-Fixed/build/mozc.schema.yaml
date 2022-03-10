@@ -1,0 +1,290 @@
+__build_info:
+  rime_version: 1.7.3
+  timestamps:
+    default: 1639233374
+    default.custom: 1639239495
+    key_bindings: 1639233374
+    key_bindings.custom: 0
+    mozc.custom: 0
+    mozc.schema: 1623720968
+    punctuation: 1639233376
+    punctuation.custom: 0
+engine:
+  filters:
+    - uniquifier
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - matcher
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - table_translator
+    - script_translator
+key_binder:
+  bindings:
+    - {accept: "Control+p", send: Up, when: composing}
+    - {accept: "Control+n", send: Down, when: composing}
+    - {accept: "Control+b", send: Left, when: composing}
+    - {accept: "Control+f", send: Right, when: composing}
+    - {accept: "Control+a", send: Home, when: composing}
+    - {accept: "Control+e", send: End, when: composing}
+    - {accept: "Control+d", send: Delete, when: composing}
+    - {accept: "Control+k", send: "Shift+Delete", when: composing}
+    - {accept: "Control+h", send: BackSpace, when: composing}
+    - {accept: "Control+g", send: Escape, when: composing}
+    - {accept: "Control+bracketleft", send: Escape, when: composing}
+    - {accept: "Control+y", send: Page_Up, when: composing}
+    - {accept: "Alt+v", send: Page_Up, when: composing}
+    - {accept: "Control+v", send: Page_Down, when: composing}
+    - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
+    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
+    - {accept: "Control+Shift+1", select: .next, when: always}
+    - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
+    - {accept: "Control+Shift+3", toggle: full_shape, when: always}
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}
+    - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
+    - {accept: "Control+Shift+exclam", select: .next, when: always}
+    - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
+    - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
+    - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
+    - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+  import_preset: default
+menu:
+  page_size: 5
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "＝"
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": "#"
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["%", "％", "°", "℃"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂"]
+    "+": "+"
+    ",": {commit: "，"}
+    "-": "-"
+    .: {commit: "。"}
+    "/": ["、", "/", "／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "="
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": "@"
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "\\", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "`"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "|", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": ["~", "～"]
+  import_preset: default
+recognizer:
+  import_preset: default
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+schema:
+  author:
+    - "xml@live.com"
+  name: mozc
+  schema_id: mozc
+  version: 2020.11.30
+speller:
+  algebra:
+    - "derive/-/ー/"
+    - "derive/〜/~/"
+    - "derive/・/\\x2f/"
+    - "derive/xtu([bcdfghjkmpqrstvwyz])/$1$1/"
+    - "derive/shi/si/"
+    - "derive/ji/zi/"
+    - "derive/chi/ti/"
+    - "derive/tsu/tu/"
+    - "derive/fu/hu/"
+    - "derive/j([aeo])/jixy$1/"
+    - "derive/f([aieo])/fux$1/"
+    - "derive/fy([auo])/fuxy$1/"
+    - "derive/([bcdghkmnpqrstvwyz])y/$1ixy/"
+    - "derive/sy([auo])/sh$1/"
+    - "derive/ch([auo])/ty$1/"
+    - "derive/v([aieo])/vux$1/"
+    - "derive/l/x/"
+    - "fuzz/n/nn/"
+  alphabet: "abcdefghijklmnopqrstuvwxyz-~/,."
+  delimiter: " "
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [Jpn, Eng]
+translator:
+  dictionary: mozc.extended
+  enable_completion: true
+  enable_encoder: true
+  enable_sentence: true
+  enable_user_dict: true
+  encode_commit_history: true
+  preedit_format:
+    - "xform/ //"
+    - "xform/l/x/"
+    - "xform/([bcdfghjkmpqrstvwyz])\\1/っ$1/"
+    - "xform/j([auo])/jixy$1/"
+    - "xform/f([aieo])/fux$1/"
+    - "xform/fy([auo])/fuxy$1/"
+    - "xform/sh([auo])/sy$1/"
+    - "xform/ch([auo])/ty$1/"
+    - "xform/([bcdghkmnpqrstvwyz])y/$1ixy/"
+    - "xform/shi/si/"
+    - "xform/ji/zi/"
+    - "xform/chi/ti/"
+    - "xform/tsu/tu/"
+    - "xform/fu/hu/"
+    - "xform/ka/か/"
+    - "xform/ga/が/"
+    - "xform/ki/き/"
+    - "xform/gi/ぎ/"
+    - "xform/ku/く/"
+    - "xform/gu/ぐ/"
+    - "xform/ke/け/"
+    - "xform/ge/げ/"
+    - "xform/ko/こ/"
+    - "xform/go/ご/"
+    - "xform/sa/さ/"
+    - "xform/za/ざ/"
+    - "xform/si/し/"
+    - "xform/zi/じ/"
+    - "xform/su/す/"
+    - "xform/zu/ず/"
+    - "xform/se/せ/"
+    - "xform/ze/ぜ/"
+    - "xform/so/そ/"
+    - "xform/zo/ぞ/"
+    - "xform/ta/た/"
+    - "xform/da/だ/"
+    - "xform/ti/ち/"
+    - "xform/di/ぢ/"
+    - "xform/xtu/っ/"
+    - "xform/tu/つ/"
+    - "xform/du/づ/"
+    - "xform/te/て/"
+    - "xform/de/で/"
+    - "xform/to/と/"
+    - "xform/do/ど/"
+    - "xform/na/な/"
+    - "xform/ni/に/"
+    - "xform/nu/ぬ/"
+    - "xform/ne/ね/"
+    - "xform/no/の/"
+    - "xform/ha/は/"
+    - "xform/ba/ば/"
+    - "xform/pa/ぱ/"
+    - "xform/hi/ひ/"
+    - "xform/bi/び/"
+    - "xform/pi/ぴ/"
+    - "xform/hu/ふ/"
+    - "xform/bu/ぶ/"
+    - "xform/pu/ぷ/"
+    - "xform/he/へ/"
+    - "xform/be/べ/"
+    - "xform/pe/ぺ/"
+    - "xform/ho/ほ/"
+    - "xform/bo/ぼ/"
+    - "xform/po/ぽ/"
+    - "xform/ma/ま/"
+    - "xform/mi/み/"
+    - "xform/mu/む/"
+    - "xform/me/め/"
+    - "xform/mo/も/"
+    - "xform/xya/ゃ/"
+    - "xform/ya/や/"
+    - "xform/xyu/ゅ/"
+    - "xform/yu/ゆ/"
+    - "xform/xyo/ょ/"
+    - "xform/yo/よ/"
+    - "xform/ra/ら/"
+    - "xform/ri/り/"
+    - "xform/ru/る/"
+    - "xform/re/れ/"
+    - "xform/ro/ろ/"
+    - "xform/xwa/ゎ/"
+    - "xform/wa/わ/"
+    - "xform/whi/ゐ/"
+    - "xform/whe/ゑ/"
+    - "xform/wo/を/"
+    - "xform/nn/ん/"
+    - "xform/vu/ゔ/"
+    - "xform/xka/ゕ/"
+    - "xform/xke/ゖ/"
+    - "xform/xa/ぁ/"
+    - "xform/a/あ/"
+    - "xform/xi/ぃ/"
+    - "xform/i/い/"
+    - "xform/xu/ぅ/"
+    - "xform/u/う/"
+    - "xform/xe/ぇ/"
+    - "xform/e/え/"
+    - "xform/xo/ぉ/"
+    - "xform/o/お/"
+    - "xform/n/ん/"
+    - "xform/\\x2f/・/"
+    - "xform/~/〜/"
+    - "xform/-/ー/"
+  spelling_hints: 9
