@@ -65,8 +65,8 @@ speller:
     - derive/([iu])a(o|ng?)$/a$1$2/
 
 translator:
-  dictionary: luna_pinyin.zhwiki.20220226
-  prism: luna_pinyin.zhwiki.20220226
+  dictionary: luna_pinyin.zhwiki.20220722
+  prism: luna_pinyin.zhwiki.20220722
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
