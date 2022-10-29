@@ -1,11 +1,11 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 1639233374
-    default.custom: 1639239495
-    key_bindings: 1639233374
+    default: 1627551412
+    default.custom: 1667059980
+    key_bindings: 1662012222
     key_bindings.custom: 0
-    punctuation: 1639233376
+    punctuation: 1644994438
     punctuation.custom: 0
 ascii_composer:
   good_old_caps_lock: true
@@ -30,7 +30,6 @@ key_binder:
     - {accept: "Control+h", send: BackSpace, when: composing}
     - {accept: "Control+g", send: Escape, when: composing}
     - {accept: "Control+bracketleft", send: Escape, when: composing}
-    - {accept: "Control+y", send: Page_Up, when: composing}
     - {accept: "Alt+v", send: Page_Up, when: composing}
     - {accept: "Control+v", send: Page_Down, when: composing}
     - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
@@ -127,7 +126,6 @@ recognizer:
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 schema_list:
   - schema: luna_pinyin
-  - schema: luna_pinyin_zhwiki
   - schema: bopomofo
   - schema: easy_en
   - schema: mozc
@@ -138,7 +136,6 @@ switcher:
   caption: "〔方案選單〕"
   fold_options: true
   hotkeys:
-    - "Control+grave"
     - "Control+Shift+grave"
     - F4
   option_list_separator: "／"

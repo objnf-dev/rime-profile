@@ -8,7 +8,6 @@ patch:
   "menu/page_size": 5
   schema_list:
     - {schema: luna_pinyin}
-    - {schema: luna_pinyin_zhwiki}
     - {schema: bopomofo}
     - {schema: easy_en}
     - {schema: mozc}

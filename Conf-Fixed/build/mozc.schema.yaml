@@ -1,13 +1,13 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 0
-    default.custom: 1639239495
-    key_bindings: 0
+    default: 1627551412
+    default.custom: 1667059980
+    key_bindings: 1662012222
     key_bindings.custom: 0
     mozc.custom: 0
     mozc.schema: 1623720968
-    punctuation: 0
+    punctuation: 1644994438
     punctuation.custom: 0
 engine:
   filters:

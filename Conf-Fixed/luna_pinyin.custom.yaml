@@ -9,15 +9,6 @@ patch:
   # 键盘字母表加入大写
   speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   recognizer/patterns/uppercase: ''
-  # zhWiki增补包
-  sechma/dependences/@after 0: luna_pinyin_zhwiki
-  engine/translators/@after 3: script_translator@zhwiki
-  zhwiki:
-    dictionary: luna_pinyin.zhwiki.20210605
-    spelling_hints: 9
-    enable_user_dict: true
-    enable_sentence: false
-    initial_quality: 100
   # 加入英语输入法
   sechma/dependences/@after 1: easy_en
   engine/translators/@after 4: table_translator@english

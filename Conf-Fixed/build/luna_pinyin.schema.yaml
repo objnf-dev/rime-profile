@@ -1,18 +1,18 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 1639233374
-    default.custom: 1639239495
+    default: 1667014490
+    default.custom: 1667059980
     grammar: 0
-    key_bindings: 1639233374
+    key_bindings: 1667014490
     key_bindings.custom: 0
-    luna_pinyin.custom: 1623720968
+    luna_pinyin.custom: 1667059558
     luna_pinyin.schema: 1623720968
     mysymbols: 1623720968
     mysymbols.custom: 0
-    pinyin: 1639233374
+    pinyin: 1667014488
     pinyin.custom: 0
-    punctuation: 1639233376
+    punctuation: 1667014490
     punctuation.custom: 0
 custom_phrase:
   db_class: stabledb
@@ -45,7 +45,6 @@ engine:
     - "table_translator@custom_phrase"
     - reverse_lookup_translator
     - script_translator
-    - "script_translator@zhwiki"
     - "table_translator@english"
     - "table_translator@mozc"
 english:
@@ -330,7 +329,6 @@ schema:
   version: 0.26
 sechma:
   dependences:
-    - luna_pinyin_zhwiki
     - easy_en
     - mozc
 simplifier:
@@ -373,9 +371,3 @@ translator:
     - "xform/([nl])v/$1ü/"
     - "xform/([nl])ue/$1üe/"
     - "xform/([jqxy])v/$1u/"
-zhwiki:
-  dictionary: luna_pinyin.zhwiki.20210605
-  enable_sentence: false
-  enable_user_dict: true
-  initial_quality: 100
-  spelling_hints: 9
