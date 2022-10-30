@@ -1,13 +1,13 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 1627551412
-    default.custom: 1667059980
+    default: 1667086664
+    default.custom: 1667117712
     easy_en.custom: 0
     easy_en.schema: 1623720968
-    key_bindings: 1662012222
+    key_bindings: 1667086664
     key_bindings.custom: 0
-    punctuation: 1644994438
+    punctuation: 1667086666
     punctuation.custom: 0
 easy_en:
   split_sentence: true
@@ -51,6 +51,7 @@ key_binder:
     - {accept: "Control+h", send: BackSpace, when: composing}
     - {accept: "Control+g", send: Escape, when: composing}
     - {accept: "Control+bracketleft", send: Escape, when: composing}
+    - {accept: "Control+y", send: Page_Up, when: composing}
     - {accept: "Alt+v", send: Page_Up, when: composing}
     - {accept: "Control+v", send: Page_Down, when: composing}
     - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
