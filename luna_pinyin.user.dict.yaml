@@ -1,0 +1,7 @@
+---
+name: luna_pinyin.user
+version: "20220310"
+sort: by_weight
+vocabulary: essay-zh-hans
+...
+

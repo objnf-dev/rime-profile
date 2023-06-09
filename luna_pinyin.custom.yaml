@@ -1,0 +1,50 @@
+patch:
+  translator/initial_quality: 100
+  translator/enable_completion: true
+  translator/encode_commit_history: true
+  translator/enable_user_dict: true
+  translator/enable_sentence: true
+  simplifier/opencc_config: s2t.json
+  switches/@2/states: [ 汉字, 漢字 ]
+  # 键盘字母表加入大写
+  speller/alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  recognizer/patterns/uppercase: ''
+  # zhWiki增补包
+  sechma/dependences/@after 0: luna_pinyin_zhwiki
+  engine/translators/@after 3: script_translator@zhwiki
+  zhwiki:
+    dictionary: luna_pinyin_zhwiki
+    spelling_hints: 9
+    enable_user_dict: true
+    enable_sentence: false
+    initial_quality: 100
+  # 加入英语输入法
+  sechma/dependences/@after 1: easy_en
+  engine/translators/@after 4: table_translator@english
+  # 英语输入法设置
+  english:
+    dictionary: easy_en
+    spelling_hints: 9
+    enable_completion: true
+    encode_commit_history: true
+    enable_user_dict: true
+    enable_sentence: false
+    initial_quality: 0
+  # 加入日语输入法
+  sechma/dependences/@after 2: mozc
+  engine/translators/@after 5: table_translator@mozc
+  # 日语输入法设置
+  mozc:
+    dictionary: mozc.extended
+    spelling_hints: 9
+    enable_completion: true
+    enable_user_dict: true
+    enable_sentence: true
+    initial_quality: 0
+  # 加载扩充词库
+  translator/dictionary: luna_pinyin.extended
+  # 改写拼写运算，使得含西文的词汇（位于luna_pinyin.cn_en.dict.yaml中）不影响简拼功能
+  speller/algebra/@before 0: 'xform/^([b-df-np-z])$/$1_/'
+  # 加载符号表
+  punctuator/import_preset: symbols
+  recognizer/patterns/punct: '^/([0-9]0?|[A-Za-z]+)$'
