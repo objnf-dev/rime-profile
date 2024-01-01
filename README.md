@@ -4,18 +4,18 @@ Rime输入法配置
 
 ## 最近更新
 
-2023/06/09
+2024/01/01
 
-- 重构Repo
-- 修正符号问题
+- 修缮schema文件
+- 重整、更新词典
 
 ## 特点
 
 - 补丁基于官方拼音输入方案“朙月拼音”制作
 - 实现中英日混合输入
-- 拼音输入法加入 BeautifulRime、[中文维基](https://github.com/felixonmars/fcitx5-pinyin-zhwiki)、[萌娘百科](https://github.com/outloudvi/mw2fcitx)、自定义流行语词库
+- 拼音输入法加入 [中文维基](https://github.com/felixonmars/fcitx5-pinyin-zhwiki)、[萌娘百科](https://github.com/outloudvi/mw2fcitx)、自定义流行语词库
 - 英文输入法采用 [EasyEN](https://github.com/BlindingDark/rime-easy-en)
-- 日语输入法词库来自谷歌开源的日语输入法 [Mozc](https://github.com/google/mozc)，可实现连词成句
+- 日语输入法词库来自JmdictFurigana [JmdictFurigana](https://github.com/Doublevil/JmdictFurigana)
 
 ## 配置存放位置
 

@@ -12,5 +12,5 @@ patch:
     - {schema: double_pinyin_flypy}
     - {schema: stroke}
     - {schema: easy_en}
-    - {schema: mozc}
+    - {schema: japanese}
     

@@ -1,0 +1,176 @@
+# Modified from nihongo-r and rime-nihongo-romaji
+
+schema:
+  schema_id: japanese
+  name: japanese
+  version: 2020.11.30
+  author:
+    - xml@live.com
+switches:
+  - name: ascii_mode
+    reset: 0
+    states:
+      - Jpn
+      - Eng
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - matcher
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+  filters:
+    - uniquifier
+speller:
+  alphabet: 'abcdefghijklmnopqrstuvwxyz-~/,.'
+  delimiter: ' '
+  algebra:
+    - derive/-/ー/
+    - derive/〜/~/
+    - derive/・/\x2f/
+    - 'derive/xtu([bcdfghjkmpqrstvwyz])/$1$1/'
+    - derive/shi/si/
+    - derive/ji/zi/
+    - derive/chi/ti/
+    - derive/tsu/tu/
+    - derive/fu/hu/
+    - 'derive/j([aeo])/jixy$1/'
+    - 'derive/f([aieo])/fux$1/'
+    - 'derive/fy([auo])/fuxy$1/'
+    - 'derive/([bcdghkmnpqrstvwyz])y/$1ixy/'
+    - 'derive/sy([auo])/sh$1/'
+    - 'derive/ch([auo])/ty$1/'
+    - 'derive/v([aieo])/vux$1/'
+    - derive/l/x/
+    - fuzz/n/nn/
+translator:
+  dictionary: japanese.extended
+  spelling_hints: 9
+  enable_sentence: true
+  encode_commit_history: true
+  enable_encoder: true
+  enable_completion: true
+  enable_user_dict: true
+  preedit_format:
+    - xform/ //
+    - xform/l/x/
+    - 'xform/([bcdfghjkmpqrstvwyz])\1/っ$1/'
+    - 'xform/j([auo])/jixy$1/'
+    - 'xform/f([aieo])/fux$1/'
+    - 'xform/fy([auo])/fuxy$1/'
+    - 'xform/sh([auo])/sy$1/'
+    - 'xform/ch([auo])/ty$1/'
+    - 'xform/([bcdghkmnpqrstvwyz])y/$1ixy/'
+    - xform/shi/si/
+    - xform/ji/zi/
+    - xform/chi/ti/
+    - xform/tsu/tu/
+    - xform/fu/hu/
+    - xform/ka/か/
+    - xform/ga/が/
+    - xform/ki/き/
+    - xform/gi/ぎ/
+    - xform/ku/く/
+    - xform/gu/ぐ/
+    - xform/ke/け/
+    - xform/ge/げ/
+    - xform/ko/こ/
+    - xform/go/ご/
+    - xform/sa/さ/
+    - xform/za/ざ/
+    - xform/si/し/
+    - xform/zi/じ/
+    - xform/su/す/
+    - xform/zu/ず/
+    - xform/se/せ/
+    - xform/ze/ぜ/
+    - xform/so/そ/
+    - xform/zo/ぞ/
+    - xform/ta/た/
+    - xform/da/だ/
+    - xform/ti/ち/
+    - xform/di/ぢ/
+    - xform/xtu/っ/
+    - xform/tu/つ/
+    - xform/du/づ/
+    - xform/te/て/
+    - xform/de/で/
+    - xform/to/と/
+    - xform/do/ど/
+    - xform/na/な/
+    - xform/ni/に/
+    - xform/nu/ぬ/
+    - xform/ne/ね/
+    - xform/no/の/
+    - xform/ha/は/
+    - xform/ba/ば/
+    - xform/pa/ぱ/
+    - xform/hi/ひ/
+    - xform/bi/び/
+    - xform/pi/ぴ/
+    - xform/hu/ふ/
+    - xform/bu/ぶ/
+    - xform/pu/ぷ/
+    - xform/he/へ/
+    - xform/be/べ/
+    - xform/pe/ぺ/
+    - xform/ho/ほ/
+    - xform/bo/ぼ/
+    - xform/po/ぽ/
+    - xform/ma/ま/
+    - xform/mi/み/
+    - xform/mu/む/
+    - xform/me/め/
+    - xform/mo/も/
+    - xform/xya/ゃ/
+    - xform/ya/や/
+    - xform/xyu/ゅ/
+    - xform/yu/ゆ/
+    - xform/xyo/ょ/
+    - xform/yo/よ/
+    - xform/ra/ら/
+    - xform/ri/り/
+    - xform/ru/る/
+    - xform/re/れ/
+    - xform/ro/ろ/
+    - xform/xwa/ゎ/
+    - xform/wa/わ/
+    - xform/whi/ゐ/
+    - xform/whe/ゑ/
+    - xform/wo/を/
+    - xform/nn/ん/
+    - xform/vu/ゔ/
+    - xform/xka/ゕ/
+    - xform/xke/ゖ/
+    - xform/xa/ぁ/
+    - xform/a/あ/
+    - xform/xi/ぃ/
+    - xform/i/い/
+    - xform/xu/ぅ/
+    - xform/u/う/
+    - xform/xe/ぇ/
+    - xform/e/え/
+    - xform/xo/ぉ/
+    - xform/o/お/
+    - xform/n/ん/
+    - xform/\x2f/・/
+    - xform/~/〜/
+    - xform/-/ー/
+punctuator:
+  import_preset: default
+key_binder:
+  import_preset: default
+recognizer:
+  import_preset: default

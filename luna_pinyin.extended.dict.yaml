@@ -20,7 +20,7 @@ vocabulary: essay-zh-hans
 #下面的是本词库包含的所有词库，请根据需要开启/禁用，词条前添删#号即可开启/关闭词库。
 import_tables:
   - luna_pinyin
-  - luna_pinyin.beautifulrime
+  - luna_pinyin.zhwiki
   - luna_pinyin.cn_en
   - luna_pinyin.mw2fctix
   - luna_pinyin.chaizi
