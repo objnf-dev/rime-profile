@@ -6,7 +6,7 @@ ObjectNotFound的Rime输入法配置
 
 - 包含两个输入法方案
   - 小鹤拼音 + [EasyEN](https://github.com/BlindingDark/rime-easy-en) 双语输入
-  - 基于[JmdictFurigana](https://github.com/Doublevil/JmdictFurigana)的日语输入 
+  - 基于[rime-japanese](https://github.com/gkovacs/rime-japanese)的日语输入，加入[JmdictFurigana](https://github.com/Doublevil/JmdictFurigana)词典
 - 拼音输入法加入 [中文维基](https://github.com/felixonmars/fcitx5-pinyin-zhwiki)、[萌娘百科](https://github.com/outloudvi/mw2fcitx)词库，同时包含自定义流行语词库
 
 ## 配置存放位置
