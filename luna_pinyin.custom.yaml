@@ -19,13 +19,6 @@ patch:
     enable_user_dict: true
     enable_sentence: true
     initial_quality: -1
-  # 加入日语输入法
-  sechma/dependences/@after 2: japanese
-  engine/translators/@after 5: script_translator@japanese
-  # 日语输入法设置
-  japanese:
-    __include: japanese.schema:/translator
-    initial_quality: -10
   # 加载扩充词库
   translator/dictionary: luna_pinyin.extended
   # 改写拼写运算，使得含西文的词汇（位于luna_pinyin.cn_en.dict.yaml中）不影响简拼功能
